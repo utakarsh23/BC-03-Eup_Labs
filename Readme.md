@@ -28,19 +28,33 @@ A full-stack application to manage and view dish information in real-time. It al
 
 ```
 Backend/
- ├── Controller/
- ├── Model/
- ├── Router/
- ├── db/
- ├── middlewares/
- ├── index.js
+    ├── src/
+    │    ├── Controller/ 
+    |    |       |
+    |    |       └── DishController.js
+    |    ├── db/
+    |    |       |
+    |    |       └── connection.js
+    │    ├── Model/
+    |    |       |
+    |    |       └── Dish.js
+    │    ├── routes/
+    |    |       |
+    |    |       └── DishRoutes.ts
+    │    └── index.js
+    ├── package.json
+
 
 Frontend/
  └── dish-dashboard/
-     ├── src/
-     ├── public/
-     ├── vite.config.ts
-     ├── package.json
+        ├── src/
+        |    ├── components/
+        |    |       |
+        |    |       └── DishForm.tsx
+        |    ├── App.tsx
+        |    └── main.tsx
+        ├── index.html
+        └── package.json
 
 Screenshots/
  └── img.png
@@ -128,7 +142,10 @@ Example POST Body:
 ## Screenshot
 
 
-![App Screenshot](Screenshots/img.png)
+![App Screenshot](Screenshots/images1.png)
+
+
+![App Screenshot](Screenshots/images2.png)
 
 ---
 

@@ -13,6 +13,10 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ dish, onTogglePublish }) => {
+    const handleToggle = () => {
+        onTogglePublish(dish._id);
+    };
+
     return (
         <div style={{
             width: "220px",
@@ -24,7 +28,6 @@ const Card: React.FC<CardProps> = ({ dish, onTogglePublish }) => {
             flexDirection: "column",
             alignItems: "center"
         }}>
-
             <img
                 src={dish.imageUrl}
                 alt={dish.dishName}
@@ -50,24 +53,57 @@ const Card: React.FC<CardProps> = ({ dish, onTogglePublish }) => {
                     marginBottom: "10px"
                 }}
             >
-        {dish.isPublished ? "Published" : "Unpublished"}
-      </span>
+                {dish.isPublished ? "Published" : "Unpublished"}
+            </span>
 
-            <button
-                onClick={() => onTogglePublish(dish._id)}
+            {/* Toggle Button */}
+            <label
                 style={{
-                    border: "none",
-                    padding: "8px 14px",
-                    borderRadius: "6px",
-                    backgroundColor: dish.isPublished ? "#ff5c5c" : "#007bff",
-                    color: "#fff",
+                    position: "relative",
+                    display: "inline-block",
+                    width: "45px",
+                    height: "24px",
                     cursor: "pointer",
-                    fontSize: "14px",
-                    transition: "0.2s"
+                    marginTop: "8px"
                 }}
             >
-                {dish.isPublished ? "Unpublish" : "Publish"}
-            </button>
+                <input
+                    type="checkbox"
+                    checked={dish.isPublished}
+                    onChange={handleToggle}
+                    style={{
+                        opacity: 0,
+                        width: 0,
+                        height: 0
+                    }}
+                />
+
+                <span
+                    style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: dish.isPublished ? "#28a745" : "#bbb",
+                        transition: ".3s",
+                        borderRadius: "34px",
+                    }}
+                />
+
+                <span
+                    style={{
+                        position: "absolute",
+                        height: "18px",
+                        width: "18px",
+                        left: dish.isPublished ? "21px" : "4px",
+                        bottom: "3px",
+                        backgroundColor: "white",
+                        transition: ".3s",
+                        borderRadius: "50%",
+                    }}
+                />
+            </label>
 
         </div>
     );
