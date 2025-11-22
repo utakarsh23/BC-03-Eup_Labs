@@ -135,5 +135,5 @@ Example POST Body:
 ## Contact
 
 Email: utakarsh.t@somaiya.edu  
-GitHub: https://github.com/utkarshmani  
-LinkedIn: https://linkedin.com/in/utkarsh-mani
+GitHub: https://github.com/utakarsh23
+LinkedIn: https://www.linkedin.com/in/tripathiutakarsh/
